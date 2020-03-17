@@ -9,46 +9,60 @@ MAIN	=	./src/main.c
 
 MAIN_OBJ	=	$(MAIN:.c=.o)
 
-SRC	=	src/read_file.c	\
-		src/error_handling.c
+SRC	=	src/read_file.c				\
+		src/error_handling.c		\
+		src/help_page.c				\
+		src/arguments_tetris.c		\
+		src/tetris_debug.c			\
+		src/tetris_game.c			\
+		src/set_free.c				\
+		src/manage_level.c			\
+		src/map.c					\
+		src/initialise.c			\
 
 SRC_OBJ	=	$(SRC:.c=.o)
 
 LIB	=	lib/my/my_str_to_array.c	\
 		lib/my/my_is_stralphap.c	\
-		lib/my/add_line_array.c	\
-		lib/my/my_is_str_nbr.c	\
-		lib/my/my_freegetnbr.c	\
-		lib/my/my_free_array.c	\
-		lib/my/my_is_alphap.c	\
-		lib/my/my_arraydup.c	\
-		lib/my/my_putarray.c	\
-		lib/my/my_putchar.c	\
-		lib/my/my_strncmp.c	\
-		lib/my/my_strcmp.c	\
-		lib/my/my_is_nbr.c	\
-		lib/my/my_printf.c	\
-		lib/my/my_putstr.c	\
-		lib/my/my_strlen.c	\
-		lib/my/my_putnbr.c	\
-		lib/my/my_strdup.c	\
-		lib/my/my_strcpy.c	\
-		lib/my/my_getnbr.c	\
-		lib/my/my_strcat.c	\
-		lib/my/my_stradd.c	\
-		lib/my/my_calloc.c
+		lib/my/add_line_array.c		\
+		lib/my/my_is_str_nbr.c		\
+		lib/my/my_freegetnbr.c		\
+		lib/my/my_free_array.c		\
+		lib/my/my_is_alphap.c		\
+		lib/my/my_arraydup.c		\
+		lib/my/my_putarray.c		\
+		lib/my/my_putchar.c			\
+		lib/my/my_strncmp.c			\
+		lib/my/my_strcmp.c			\
+		lib/my/my_is_nbr.c			\
+		lib/my/my_printf.c			\
+		lib/my/my_putstr.c			\
+		lib/my/my_strlen.c			\
+		lib/my/my_putnbr.c			\
+		lib/my/my_strdup.c			\
+		lib/my/my_strcpy.c			\
+		lib/my/my_getnbr.c			\
+		lib/my/my_strcat.c			\
+		lib/my/my_stradd.c			\
+		lib/my/my_calloc.c			\
+		lib/my/my_strequbool.c		\
+		lib/my/my_itostr.c			\
+		lib/my/get_next_line.c
 
 LIB_OBJ	=	$(LIB:.c=.o)
 
-TESTS	=	./tests/tests_my_printf.c
+TESTS	=	tests/tests_my_printf_get.c		\
+			tests/tests_my_printf_modulo.c	\
+			tests/tests_my_printf_set.c		\
+			tests/tests_my_printf_start.c	\
 
-TARGET	=	check_tetrimino
+TARGET	=	tetris
 
 LIB_NAME	=	libmy.a
 
 TESTS_NAME	=	unit_tests
 
-CFLAGS	=	-I./include -Wall -Wextra -Werror -pedantic -fno-builtin
+CFLAGS	=	-I./include -Wall -Wextra -pedantic -fno-builtin -g3
 
 all:	$(TARGET)
 

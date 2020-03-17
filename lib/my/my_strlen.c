@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** my_strlen
 ** File description:
-** My strlen
+** my_strlen
 */
 
 int my_strlen(char *str)

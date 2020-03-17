@@ -7,6 +7,20 @@
 
 #ifndef _LIBMY_H_
 #define _LIBMY_H_
+#include <stdbool.h>
+
+#ifndef READ_SIZE
+#define READ_SIZE (3)
+#endif /* READ_SIZE */
+
+typedef struct val {
+    char *buff_inter;
+    int turn;
+    int carac;
+} val_t;
+
+// get_next_line.c
+char *get_next_line(int fd);
 
 void my_free_array(char **array);
 void my_putarray(char **tab, char separation);
@@ -35,5 +49,8 @@ char *my_calloc(int size);
 char **my_str_to_array(char *str, char c);
 char **my_arraydup(char **src);
 char **add_line_array(char **src, char *line);
+
+bool my_strequbool(char *str1, char *str2);
+char *my_itostr(unsigned int size);
 
 #endif
