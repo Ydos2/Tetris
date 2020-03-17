@@ -11,5 +11,5 @@
 
 void change_map_size(arguments_t *arguments)
 {
-
+    (void)arguments;
 }

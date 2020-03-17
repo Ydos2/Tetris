@@ -10,5 +10,5 @@
 
 void tetris_start(arguments_t *arguments)
 {
-
+    (void)arguments;
 }

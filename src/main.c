@@ -11,7 +11,8 @@
 
 int start_program(arguments_t *arguments, tetri_t tetrimino)
 {
-    if (arguments->debug == true)
+    (void)tetrimino;
+    if (arguments->debug == 1)
         tetris_debug(arguments);
     tetris_start(arguments);
     return (0);

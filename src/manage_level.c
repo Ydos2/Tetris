@@ -11,5 +11,5 @@
 
 void manage_level_flag(arguments_t *arguments)
 {
-
+    (void)arguments;
 }

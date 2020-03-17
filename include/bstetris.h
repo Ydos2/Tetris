@@ -22,8 +22,8 @@ typedef struct arguments
     char key_pause;
     int map_size_x;
     int map_size_y;
-    bool without_next;
-    bool debug;
+    int without_next;
+    int debug;
 } arguments_t;
 
 typedef struct tetri_s

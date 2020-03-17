@@ -26,7 +26,6 @@ char *configure_key_display(char c)
         return (my_strdup("^EOB"));
     if (c == 32)
         return (my_strdup("(space)"));
-
     str = my_itostr(1);
     str[0] = c;
     return (str);
@@ -35,17 +34,17 @@ char *configure_key_display(char c)
 void key_display(arguments_t *arguments)
 {
     my_putstr("Key Left : ");
-    my_putstr(&arguments->key_left);
+    my_printf("%c", arguments->key_left);
     my_putstr("\nKey Right : ");
-    my_putstr(&arguments->key_right);
+    my_printf("%c", arguments->key_right);
     my_putstr("\nKey Turn : ");
-    my_putstr(&arguments->key_turn);
+    my_printf("%c", arguments->key_turn);
     my_putstr("\nKey Drop : ");
-    my_putstr(&arguments->key_drop);
+    my_printf("%c", arguments->key_drop);
     my_putstr("\nKey Quit : ");
-    my_putstr(&arguments->key_quit);
+    my_printf("%c", arguments->key_quit);
     my_putstr("\nKey Pause : ");
-    my_putstr(&arguments->key_pause);
+    my_printf("%c", arguments->key_pause);
     my_putstr("\nNext : ");
     if (arguments->without_next)
         my_putstr("Yes");
@@ -55,7 +54,7 @@ void key_display(arguments_t *arguments)
 
 void tetriminos_display(arguments_t *arguments)
 {
-
+    (void)arguments;
 }
 
 void tetris_debug(arguments_t *arguments)
@@ -65,11 +64,11 @@ void tetris_debug(arguments_t *arguments)
     my_putstr("*** DEBUG MODE ***\n");
     key_display(arguments);
     my_putstr("\nLevel : ");
-    my_putnbr(&arguments->Level);
+    my_putnbr(arguments->Level);
     my_putstr("\nSize : ");
-    my_putnbr(&arguments->map_size_x);
+    my_putnbr(arguments->map_size_x);
     my_putstr("*");
-    my_putnbr(&arguments->map_size_y);
+    my_putnbr(arguments->map_size_y);
     my_putstr("\nTetriminos : ");
     //my_put_nbr(arguments->);
     my_putchar('\n');
