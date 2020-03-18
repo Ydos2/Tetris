@@ -11,7 +11,7 @@ void draw_help(void)
 {
     write(1, "Usage:\t./tetris [options]\n", 26);
     write(1, "Options:\n", 9);
-    write(1, " --help\t\t\tDisplay this help\n", 27);
+    write(1, " --help\t\t\tDisplay this help\n", 28);
     write(1, " -L --level={num}\tStart Tetris at level num (def: 1)\n", 53);
     write(1, " -l --key-left={K}\tMove the tetrimino ", 38);
     write(1, "LEFT using the K key (def: left arrow)\n", 39);
