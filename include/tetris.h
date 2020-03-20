@@ -11,7 +11,7 @@
 
 typedef struct option opt_t;
 
-typedef struct arguments
+typedef struct arguments_s
 {
     int Level;
     char key_left;

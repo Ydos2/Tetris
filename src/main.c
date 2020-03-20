@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "libmy.h"
-#include "bstetris.h"
+#include "tetris.h"
 
 int start_program(arguments_t *arguments, tetri_t tetrimino)
 {

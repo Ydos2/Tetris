@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "libmy.h"
-#include "bstetris.h"
+#include "tetris.h"
 
 void manage_level_flag(arguments_t *arguments)
 {

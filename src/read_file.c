@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "bstetris.h"
+#include "tetris.h"
 #include "libmy.h"
 
 int check_size(char *path)

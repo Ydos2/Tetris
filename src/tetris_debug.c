@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
-#include "bstetris.h"
+#include "tetris.h"
 #include "libmy.h"
 
 char *configure_key_display(char c)

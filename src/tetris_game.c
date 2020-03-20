@@ -5,7 +5,7 @@
 ** tetris_game
 */
 
-#include "bstetris.h"
+#include "tetris.h"
 #include "libmy.h"
 
 void tetris_start(arguments_t *arguments)

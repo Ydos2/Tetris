@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "libmy.h"
-#include "bstetris.h"
+#include "tetris.h"
 
 void change_map_size(arguments_t *arguments)
 {

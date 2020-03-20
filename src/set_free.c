@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "libmy.h"
-#include "bstetris.h"
+#include "tetris.h"
 
 void free_all(arguments_t *arguments)
 {

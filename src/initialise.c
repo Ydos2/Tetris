@@ -5,7 +5,7 @@
 ** initialise
 */
 
-#include "bstetris.h"
+#include "tetris.h"
 #include "libmy.h"
 
 void initialise_arguments(arguments_t *arguments)
