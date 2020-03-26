@@ -52,43 +52,34 @@ void key_display(arguments_t *arguments)
         my_putstr("No");
 }
 
-/*void individual_display(arguments_t *arguments)
+void individual_display(tetri_t tetrimino)
 {
     my_putstr("Size ");
-    my_put_nbr(arguments->width);
+    my_putnbr(tetrimino.width);
     my_putstr("*");
-    my_put_nbr(arguments->height);
+    my_putnbr(tetrimino.lenght);
     my_putstr(" : Color ");
-    my_put_nbr(arguments->color);
+    my_putnbr(tetrimino.color);
     my_putstr(" :\n");
-    for (int i = 0; arguments->form[i] != NULL; i++) {
-        my_putstr(arguments->form[i]);
-        my_putstr("\n");
-    }
-}*/
-
-void tetriminos_display(arguments_t *arguments)
-{
-    /*
-    //tmp = la fameuse liste chainer
-    while (tmp->next != NULL) {
-        //Ici une liste chainer des tétrimino, genre la taille en x et y
-        //leur id et leur color
-        if (tmp->next->id >= 0) {
-            my_putstr("Tetriminos : Name ");
-            my_putstr(tmp->next->name);
-            my_putstr(" : ");
-            if (tmp->next->invalid == 0)
-                valid_info_display(tmp->next);
-            else
-                my_putstr("Error\n");
-        }
-        tmp = tmp->next;
-    }
-    */
+    my_putarray(tetrimino.shape, '\0');
 }
 
-void tetris_debug(arguments_t *arguments)
+void tetriminos_display(arguments_t *arguments, tetri_t *tetrimino)
+{
+    for (int i = 0; i < arguments->nbr_tets; i++) {
+        //Ici une liste chainer des tétrimino, genre la taille en x et y
+        //leur id et leur color
+        my_putstr("Tetriminos : Name ");
+        my_putstr(tetrimino[i].name);
+        my_putstr(" : ");
+        if (tetrimino[i].error == 0)
+            individual_display(tetrimino[i]);
+        else
+            my_putstr("Error\n");
+    }
+}
+
+void tetris_debug(arguments_t *arguments, tetri_t *tetrimino)
 {
     char *line = NULL;
 
@@ -101,10 +92,9 @@ void tetris_debug(arguments_t *arguments)
     my_putstr("*");
     my_putnbr(arguments->map_size_y);
     my_putstr("\nTetriminos : ");
-    //Ici le nombre de tétriminos
-    //my_put_nbr(arguments->);
+    my_putnbr(arguments->nbr_tets);
     my_putchar('\n');
-    //tetriminos_display(arguments);
+    tetriminos_display(arguments, tetrimino);
     my_putstr("Press any key to start Tetris\n");
     line = get_next_line(0);
     free(line);

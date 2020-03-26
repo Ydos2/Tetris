@@ -32,4 +32,5 @@ void initialise_arguments(arguments_t *arguments)
     arguments->map_size_x = 10;
     arguments->map_size_y = 20;
     arguments->without_next = 1;
+    arguments->nbr_tets = 0;
 }
