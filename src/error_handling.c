@@ -27,7 +27,7 @@ int check_name(char *name)
     for (int k = len - 1; name[k] != '.' && k >= 0; k--, j++)
         file_type[j] = name[k];
     file_type[j] = '\0';
-    if (my_strcmp(file_type, "onimirtet") != 0 || i == 0)
+    if (my_strcmp(file_type, "onimirtet") != 0)
         return (-84);
     return (i);
 }
