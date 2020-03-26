@@ -32,17 +32,17 @@ void change_key(int res, arguments_t *arguments)
     multi = ((multi == 0) ? *optarg : multi);
     switch (res) {
         case 'l': arguments->key_left = multi;
-        break;
+            break;
         case 'r': arguments->key_right = multi;
-        break;
+            break;
         case 't': arguments->key_turn = multi;
-        break;
+            break;
         case 'd': arguments->key_drop = multi;
-        break;
+            break;
         case 'q': arguments->key_quit = multi;
-        break;
+            break;
         case 'p': arguments->key_pause = multi;
-        default:
+            default:
         break;
     }
 }
@@ -51,11 +51,11 @@ void flag_action(int res, arguments_t *arguments)
 {
     switch (res) {
         case 'D': arguments->debug = 1;
-        break;
+            break;
         case 'L': manage_level_flag(arguments);
-        break;
+            break;
         case 8: change_map_size(arguments);
-        break;
+            break;
         case '?':
             free_all(arguments);
             exit(84);

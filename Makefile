@@ -19,12 +19,14 @@ SRC	=	src/read_file.c				\
 		src/manage_level.c			\
 		src/map.c					\
 		src/initialise.c			\
+		src/check_tetriminos.c
 
 SRC_OBJ	=	$(SRC:.c=.o)
 
 LIB	=	lib/my/my_str_to_array.c	\
 		lib/my/my_is_stralphap.c	\
 		lib/my/add_line_array.c		\
+		lib/my/rm_line_array.c		\
 		lib/my/my_is_str_nbr.c		\
 		lib/my/my_freegetnbr.c		\
 		lib/my/my_free_array.c		\
@@ -33,6 +35,8 @@ LIB	=	lib/my/my_str_to_array.c	\
 		lib/my/my_putarray.c		\
 		lib/my/my_putchar.c			\
 		lib/my/my_strncmp.c			\
+		lib/my/my_strcatt.c			\
+		lib/my/my_strcat.c			\
 		lib/my/my_strcmp.c			\
 		lib/my/my_is_nbr.c			\
 		lib/my/my_printf.c			\
@@ -42,7 +46,6 @@ LIB	=	lib/my/my_str_to_array.c	\
 		lib/my/my_strdup.c			\
 		lib/my/my_strcpy.c			\
 		lib/my/my_getnbr.c			\
-		lib/my/my_strcat.c			\
 		lib/my/my_stradd.c			\
 		lib/my/my_calloc.c			\
 		lib/my/my_strequbool.c		\

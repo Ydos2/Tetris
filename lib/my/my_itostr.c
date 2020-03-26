@@ -15,14 +15,10 @@ char *my_itostr(unsigned int size)
 
     if (!size)
         return (NULL);
-
     ptr = malloc(sizeof(char) * (size + 1));
-
     if (ptr == NULL)
         return (NULL);
-
     while (i < size + 1)
         *(ptr + i++) = 0;
-
     return (ptr);
 }

@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** add_line_array.c
 ** File description:
-** Adds a char pointer to an array
+** Adds a str to an array
 */
 
 #include <stdlib.h>
@@ -15,8 +15,7 @@ char **add_line_array(char **src, char *line)
 
     if (src == NULL)
         return (NULL);
-    while (src[len] != NULL)
-        len++;
+    for (; src[len] != NULL; len++);
     len++;
     array = malloc(sizeof(char *) * (len + 1));
     if (array == NULL)
@@ -28,5 +27,6 @@ char **add_line_array(char **src, char *line)
         if (array[i] == NULL)
             return (NULL);
     }
+    my_free_array(src);
     return (array);
 }

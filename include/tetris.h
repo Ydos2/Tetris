@@ -13,7 +13,7 @@ typedef struct option opt_t;
 
 typedef struct arguments_s
 {
-    int Level;
+    int level;
     char key_left;
     char key_right;
     char key_turn;
@@ -28,7 +28,7 @@ typedef struct arguments_s
 
 typedef struct tetri_s
 {
-    char *shape;
+    char **shape;
     char *name;
     int width;
     int lenght;
@@ -36,16 +36,22 @@ typedef struct tetri_s
     int error;
 } tetri_t;
 
+// help_page.c
+int print_help(void);
+
 // error_handling.c
-tetri_t check_errors(int ac, char **av, tetri_t tetrimino);
-int check_first_line(char *first_str, tetri_t *tetrimino);
-int check_lines(char **array, tetri_t *tetrimino);
+tetri_t check_errors(char *path, tetri_t tetrimino, arguments_t *arguments);
+int check_first_line(tetri_t *tetrimino);
+int check_name(char *name);
 
 // read_file.c
 int check_open_n_read(char *path, tetri_t *tetrimino);
+void check_tetri_properties(tetri_t *tetrimino, arguments_t *arguments);
 
-// help_page.c
-void draw_help(void);
+// check_tetriminos.c
+tetri_t *check_folder(arguments_t *arguments, int nbr_tets);
+char **remove_first_line(char **shape);
+int check_lines(tetri_t *tetrimino, int lines);
 
 // arguments_tetris.c
 arguments_t *arguments_tetris(int ac, char **av, arguments_t *arguments);
@@ -67,5 +73,6 @@ void change_map_size(arguments_t *arguments);
 
 // initialise.c
 void initialise_arguments(arguments_t *arguments);
+int share_nbr_tetris(int entry);
 
 #endif /* !bs_tet */

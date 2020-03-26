@@ -95,7 +95,7 @@ void tetris_debug(arguments_t *arguments)
     my_putstr("*** DEBUG MODE ***\n");
     key_display(arguments);
     my_putstr("\nLevel : ");
-    my_putnbr(arguments->Level);
+    my_putnbr(arguments->level);
     my_putstr("\nSize : ");
     my_putnbr(arguments->map_size_x);
     my_putstr("*");
