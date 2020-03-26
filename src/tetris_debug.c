@@ -88,9 +88,10 @@ void tetriminos_display(arguments_t *arguments)
     */
 }
 
-void tetris_debug(arguments_t *arguments)
+void tetris_debug(arguments_t *arguments, tetri_t *tetrimino)
 {
     char *line = NULL;
+    int i = 0;
 
     my_putstr("*** DEBUG MODE ***\n");
     key_display(arguments);
@@ -102,7 +103,8 @@ void tetris_debug(arguments_t *arguments)
     my_putnbr(arguments->map_size_y);
     my_putstr("\nTetriminos : ");
     //Ici le nombre de tétriminos
-    //my_put_nbr(arguments->);
+    for (; tetrimino->name[i] != '\0'; i++);
+    my_putnbr(i);
     my_putchar('\n');
     //tetriminos_display(arguments);
     my_putstr("Press any key to start Tetris\n");
