@@ -6,13 +6,14 @@
 */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "libmy.h"
 #include "tetris.h"
 
 int start_program(arguments_t *arguments, tetri_t *tetrimino)
 {
     if (arguments->debug == 1)
-        tetris_debug(arguments);
+        tetris_debug(arguments, tetrimino);
     tetris_start(arguments);
     return (0);
 }
@@ -28,7 +29,7 @@ int main(int ac, char **av)
             return (print_help());
     arguments = arguments_tetris(ac, av, arguments);
     tetrimino = check_folder(arguments, nbr_tets);
-    nbr_tets = share_nbr_tetris(0);
+    arguments->nbr_tets = share_nbr_tetris(0);
     start_program(arguments, tetrimino);
     if (tetrimino == NULL)
         return (84);

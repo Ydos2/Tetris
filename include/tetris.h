@@ -13,17 +13,18 @@ typedef struct option opt_t;
 
 typedef struct arguments_s
 {
-    int level;
     char key_left;
     char key_right;
     char key_turn;
     char key_drop;
     char key_quit;
     char key_pause;
+    int level;
     int map_size_x;
     int map_size_y;
     int without_next;
     int debug;
+    int nbr_tets;
 } arguments_t;
 
 typedef struct tetri_s
@@ -57,7 +58,7 @@ int check_lines(tetri_t *tetrimino, int lines);
 arguments_t *arguments_tetris(int ac, char **av, arguments_t *arguments);
 
 // tetris_debug.c
-void tetris_debug(arguments_t *arguments);
+void tetris_debug(arguments_t *arguments, tetri_t *tetrimino);
 
 // tetris_game.c
 void tetris_start(arguments_t *arguments);
