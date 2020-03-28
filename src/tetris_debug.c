@@ -68,10 +68,7 @@ void tetriminos_display(arguments_t *arguments, tetri_t *tetrimino)
 {
     for (int i = 0; i < arguments->nbr_tets; i++) {
         my_putstr("Tetriminos : Name ");
-        if (my_strlen(tetrimino[i].name) == 0)
-            my_putstr("(null)");
-        else
-            my_putstr(tetrimino[i].name);
+        my_putstr(tetrimino[i].name);
         my_putstr(" : ");
         if (tetrimino[i].error == 0)
             individual_display(tetrimino[i]);
