@@ -25,6 +25,11 @@ typedef struct arguments_s
     int without_next;
     int debug;
     int nbr_tets;
+    int score;
+    char **map;
+    int frame;
+    int start_time;
+    int high_score;
 } arguments_t;
 
 typedef struct tetri_s
@@ -61,7 +66,7 @@ arguments_t *arguments_tetris(int ac, char **av, arguments_t *arguments);
 void tetris_debug(arguments_t *arguments, tetri_t *tetrimino);
 
 // tetris_game.c
-void tetris_start(arguments_t *arguments);
+void tetris_start(arguments_t *arguments, tetri_t *tetrimino);
 
 // set_free.c
 void free_all(arguments_t *arguments);
@@ -75,5 +80,21 @@ void change_map_size(arguments_t *arguments);
 // initialise.c
 void initialise_arguments(arguments_t *arguments);
 int share_nbr_tetris(int entry);
+void initialise_ncurse(arguments_t *arguments);
+
+// display.c
+/*void Display_drawRect(t_vect *pos, t_vect *size,
+    attribute__((unused))int lol);
+void Display_draw(t_shape *shape, t_vect *board, int size[2]);
+void Display_drawAt(t_shape *shape, t_vect *pos);
+*/void Display_drawMap(arguments_t *arguments, int size[2]);
+void Display_animeLost(arguments_t *arguments, int size[2]);
+
+// ui_display.c
+void Display_stats(arguments_t *arguments, int level);
+void Display_title(void);
+
+// tools_function.c
+void *xmalloc(int size);
 
 #endif /* !bs_tet */

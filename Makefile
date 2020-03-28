@@ -19,6 +19,10 @@ SRC	=	src/read_file.c				\
 		src/manage_level.c			\
 		src/map.c					\
 		src/initialise.c			\
+		src/key_entry.c				\
+		src/display.c				\
+		src/ui_display.c			\
+		src/tools_function.c		\
 		src/check_tetriminos.c
 
 SRC_OBJ	=	$(SRC:.c=.o)
@@ -50,6 +54,7 @@ LIB	=	lib/my/my_str_to_array.c	\
 		lib/my/my_calloc.c			\
 		lib/my/my_strequbool.c		\
 		lib/my/my_itostr.c			\
+		lib/my/my_memset.c			\
 		lib/my/get_next_line.c
 
 LIB_OBJ	=	$(LIB:.c=.o)
@@ -65,7 +70,7 @@ LIB_NAME	=	libmy.a
 
 TESTS_NAME	=	unit_tests
 
-CFLAGS	=	-I./include -Wall -Wextra -pedantic -fno-builtin -g3
+CFLAGS	=	-I./include -Wall -Wextra -pedantic -fno-builtin -lncurses -g3
 
 all:	$(TARGET)
 

@@ -14,7 +14,8 @@ int start_program(arguments_t *arguments, tetri_t *tetrimino)
 {
     if (arguments->debug == 1)
         tetris_debug(arguments, tetrimino);
-    tetris_start(arguments);
+    initialise_ncurse(arguments);
+    tetris_start(arguments, tetrimino);
     return (0);
 }
 

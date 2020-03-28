@@ -56,4 +56,6 @@ char **rm_line_array(char **src, int line);
 bool my_strequbool(char *str1, char *str2);
 char *my_itostr(unsigned int size);
 
+void my_memset(char *str, int n, char c);
+
 #endif
