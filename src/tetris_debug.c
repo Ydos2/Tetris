@@ -17,15 +17,15 @@ char *configure_key_display(char c)
     char *str = NULL;
 
     if (c == 68)
-        return (my_strdup("^EOD"));
+        return ("^EOD");
     if (c == 67)
-        return (my_strdup("^EOC"));
+        return ("^EOC");
     if (c == 65)
-        return (my_strdup("^EOA"));
+        return ("^EOA");
     if (c == 66)
-        return (my_strdup("^EOB"));
+        return ("^EOB");
     if (c == 32)
-        return (my_strdup("(space)"));
+        return ("(space)");
     str = my_itostr(1);
     str[0] = c;
     return (str);
@@ -34,17 +34,17 @@ char *configure_key_display(char c)
 void key_display(arguments_t *arguments)
 {
     my_putstr("Key Left : ");
-    my_printf("%c", arguments->key_left);
+    my_printf("%s", configure_key_display(arguments->key_left));
     my_putstr("\nKey Right : ");
-    my_printf("%c", arguments->key_right);
+    my_printf("%s", configure_key_display(arguments->key_right));
     my_putstr("\nKey Turn : ");
-    my_printf("%c", arguments->key_turn);
+    my_printf("%s", configure_key_display(arguments->key_turn));
     my_putstr("\nKey Drop : ");
-    my_printf("%c", arguments->key_drop);
+    my_printf("%s", configure_key_display(arguments->key_drop));
     my_putstr("\nKey Quit : ");
-    my_printf("%c", arguments->key_quit);
+    my_printf("%s", configure_key_display(arguments->key_quit));
     my_putstr("\nKey Pause : ");
-    my_printf("%c", arguments->key_pause);
+    my_printf("%s", configure_key_display(arguments->key_pause));
     my_putstr("\nNext : ");
     if (arguments->without_next)
         my_putstr("Yes");
