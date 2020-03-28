@@ -23,6 +23,7 @@ SRC	=	src/read_file.c				\
 		src/display.c				\
 		src/ui_display.c			\
 		src/tools_function.c		\
+		src/start_input.c			\
 		src/check_tetriminos.c
 
 SRC_OBJ	=	$(SRC:.c=.o)

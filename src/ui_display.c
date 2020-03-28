@@ -64,10 +64,6 @@ void Display_title(void)
 
 void Display_stats(arguments_t *arguments, int level)
 {
-    //Display_drawRect(&((t_vect){14, 12}), &((t_vect){15, 11}), 7);
-    /*mvprintw(18, 18, "Time :\t%d:%02d:%02d", (time(NULL) - arguments->start_time) /
-        3600, (time(NULL) - arguments->start_time) % 3600 / 60, (time(NULL) -
-            arguments->start_time) % 60);*/
     mvprintw(14, 18, "Score :\t%07d", arguments->score);
     mvprintw(16, 18, "High score :\t%07d", arguments->high_score);
     mvprintw(20, 18, "Level :\t     %02d", level);

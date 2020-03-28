@@ -97,4 +97,10 @@ void Display_title(void);
 // tools_function.c
 void *xmalloc(int size);
 
+// key_entry.c
+char get_input(arguments_t *arguments);
+
+// start_input.c
+int handle_actual(arguments_t *arguments, int size[2], int level);
+
 #endif /* !bs_tet */
