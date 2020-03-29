@@ -82,17 +82,12 @@ void initialise_arguments(arguments_t *arguments);
 int share_nbr_tetris(int entry);
 void initialise_ncurse(arguments_t *arguments);
 
-// display.c
-/*void Display_drawRect(t_vect *pos, t_vect *size,
-    attribute__((unused))int lol);
-void Display_draw(t_shape *shape, t_vect *board, int size[2]);
-void Display_drawAt(t_shape *shape, t_vect *pos);
-*/void Display_drawMap(arguments_t *arguments, int size[2]);
-void Display_animeLost(arguments_t *arguments, int size[2]);
+// map_display.c
+void display_map(arguments_t *arguments);
 
 // ui_display.c
-void Display_stats(arguments_t *arguments, int level);
-void Display_title(void);
+void display_stats(arguments_t *arguments, int level);
+void display_title(void);
 
 // tools_function.c
 void *xmalloc(int size);
@@ -102,5 +97,8 @@ char get_input(arguments_t *arguments);
 
 // start_input.c
 int handle_actual(arguments_t *arguments, int size[2], int level);
+
+// map_display.c
+void display_map(arguments_t *arguments);
 
 #endif /* !bs_tet */

@@ -20,7 +20,7 @@ SRC	=	src/read_file.c				\
 		src/map.c					\
 		src/initialise.c			\
 		src/key_entry.c				\
-		src/display.c				\
+		src/map_display.c			\
 		src/ui_display.c			\
 		src/tools_function.c		\
 		src/start_input.c			\

@@ -14,9 +14,9 @@
 void display(arguments_t *arguments, tetri_t *tetrimino, int size[2])
 {
     arguments->frame += 1;
-    Display_stats(arguments, arguments->score / 1000 + arguments->level);
-    Display_title();
-    Display_drawMap(arguments, size);
+    display_stats(arguments, arguments->score / 1000 + arguments->level);
+    display_title();
+    display_map(arguments);
 }
 
 int loop_game(arguments_t *arguments, tetri_t *tetrimino)
