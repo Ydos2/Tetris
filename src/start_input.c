@@ -20,8 +20,6 @@ int handle_sys(char input, arguments_t *arguments, int size[2])
         mvprintw(size[1] / 2, size[0] / 2 - 3, "PAUSED");
         refresh();
     }
-    /*if (input == arguments->key_drop)
-        ->drop = 1;*/
     return (0);
 }
 
