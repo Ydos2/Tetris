@@ -47,12 +47,6 @@ void display_title3(void)
     mvprintw(7, 52, "        ");
     mvprintw(8, 58, "  ");
     mvprintw(9, 52, "        ");
-    attron(COLOR_PAIR(3));
-    mvprintw(5, 62, "        ");
-    mvprintw(6, 62, "  ");
-    mvprintw(7, 62, "        ");
-    mvprintw(8, 68, "  ");
-    mvprintw(9, 62, "        ");
 }
 
 void display_title2(void)

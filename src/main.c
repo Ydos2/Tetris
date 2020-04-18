@@ -31,6 +31,7 @@ int main(int ac, char **av)
     arguments = arguments_tetris(ac, av, arguments);
     tetrimino = check_folder(arguments, nbr_tets);
     arguments->nbr_tets = share_nbr_tetris(0);
+    arguments->map = create_empty_map(arguments);
     start_program(arguments, tetrimino);
     if (tetrimino == NULL)
         return (84);

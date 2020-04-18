@@ -67,14 +67,9 @@ void flag_action(int res, arguments_t *arguments)
     }
 }
 
-arguments_t *arguments_tetris(int ac, char **av, arguments_t *arguments)
+opt_t *set_options(arguments_t *arguments)
 {
-    int res = 0;
-    char *shortopt = "+L:l:r:t:d:q:p:Dh";
-
-    arguments = malloc(sizeof(arguments_t));
-    initialise_arguments(arguments);
-    opt_t opt[] = {
+    return ((opt_t[]) {
         { "without-next", no_argument, &arguments->without_next, 0 },
         { "level", required_argument, NULL, 'L' },
         { "key-left", required_argument, NULL, 'l' },
@@ -86,7 +81,18 @@ arguments_t *arguments_tetris(int ac, char **av, arguments_t *arguments)
         { "debug", no_argument, &arguments->debug, 1 },
         { "help", no_argument, NULL, 'h' },
         { "map-size", required_argument, NULL, 8 }
-    };
+    });
+}
+
+arguments_t *arguments_tetris(int ac, char **av, arguments_t *arguments)
+{
+    int res = 0;
+    char *shortopt = "+L:l:r:t:d:q:p:Dh";
+    opt_t *opt = NULL;
+
+    arguments = malloc(sizeof(arguments_t));
+    initialise_arguments(arguments);
+    opt = set_options(arguments);
     while (res >= 0) {
         res = getopt_long(ac, av, shortopt, opt, NULL);
         flag_action(res, arguments);

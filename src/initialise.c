@@ -30,8 +30,8 @@ void initialise_arguments(arguments_t *arguments)
     arguments->key_pause = 32;
     arguments->debug = 0;
     arguments->level = 1;
-    arguments->map_size_x = 10;
-    arguments->map_size_y = 20;
+    arguments->map_size_x = 20;
+    arguments->map_size_y = 10;
     arguments->without_next = 1;
     arguments->nbr_tets = 0;
     arguments->score = 0;

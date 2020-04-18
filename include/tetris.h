@@ -76,6 +76,7 @@ void manage_level_flag(arguments_t *arguments);
 
 // map.c
 void change_map_size(arguments_t *arguments);
+char **create_empty_map(arguments_t *arguments);
 
 // initialise.c
 void initialise_arguments(arguments_t *arguments);
@@ -97,8 +98,5 @@ char get_input(arguments_t *arguments);
 
 // start_input.c
 int handle_actual(arguments_t *arguments, int size[2], int level);
-
-// map_display.c
-void display_map(arguments_t *arguments);
 
 #endif /* !bs_tet */
