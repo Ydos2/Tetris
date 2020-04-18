@@ -12,25 +12,25 @@
 void display_cbt(void)
 {
     attron(COLOR_PAIR(3));
-    mvprintw(5, 85, "        ");
-    mvprintw(6, 85, "  ");
-    mvprintw(7, 85, "  ");
-    mvprintw(8, 85, "  ");
-    mvprintw(9, 85, "        ");
-    attron(COLOR_PAIR(5));
-    mvprintw(5, 96, "    ");
-    mvprintw(6, 96, "  ");
-    mvprintw(6, 100, "  ");
-    mvprintw(7, 96, "    ");
-    mvprintw(8, 96, "  ");
-    mvprintw(8, 100, "  ");
-    mvprintw(9, 96, "    ");
+    mvprintw(5, 75, "        ");
+    mvprintw(6, 75, "  ");
+    mvprintw(7, 75, "  ");
+    mvprintw(8, 75, "  ");
+    mvprintw(9, 75, "        ");
     attron(COLOR_PAIR(4));
-    mvprintw(5, 105, "        ");
-    mvprintw(6, 108, "  ");
-    mvprintw(7, 108, "  ");
-    mvprintw(8, 108, "  ");
-    mvprintw(9, 108, "  ");
+    mvprintw(5, 86, "    ");
+    mvprintw(6, 86, "  ");
+    mvprintw(6, 90, "  ");
+    mvprintw(7, 86, "    ");
+    mvprintw(8, 86, "  ");
+    mvprintw(8, 90, "  ");
+    mvprintw(9, 86, "    ");
+    attron(COLOR_PAIR(5));
+    mvprintw(5, 95, "        ");
+    mvprintw(6, 98, "  ");
+    mvprintw(7, 98, "  ");
+    mvprintw(8, 98, "  ");
+    mvprintw(9, 98, "  ");
 }
 
 void display_title3(void)

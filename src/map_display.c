@@ -11,7 +11,7 @@
 
 void display_map(arguments_t *arguments)
 {
-    attron(COLOR_PAIR(8));
+    attroff(stdscr);
     for (int a = 0; a <= arguments->map_size_y + 1; a++)
-        mvprintw((a + 14), 50, "%s\n", arguments->map[a]);
+        mvprintw((a + 12), 43, "%s\n", arguments->map[a]);
 }
