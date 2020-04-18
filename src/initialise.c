@@ -63,13 +63,4 @@ void initialise_ncurse(arguments_t *arguments)
     keypad(stdscr, TRUE);
     start_color();
     init_pair_void();
-    index[0] = ((arguments->map =
-        xmalloc(sizeof(char *) * arguments->map_size_y)) == 0) - 1;
-    while (++index[0] < arguments->map_size_y) {
-        index[1] = -1;
-        arguments->map[index[0]] =
-            xmalloc(sizeof(char) * (arguments->map_size_x + 1));
-        while (++index[1] < arguments->map_size_x)
-            arguments->map[index[0]][index[1]] = 0;
-    }
 }
