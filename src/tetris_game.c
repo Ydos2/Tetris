@@ -13,9 +13,10 @@
 
 static int end_move(arguments_t *arguments, tetri_t *tetrimino)
 {
-    if (arguments->pos_actu_y == 0) {
+    if (arguments->pos_actu_y == arguments->map_size_y - 5) {
         arguments->pos_actu_x = 0;
         arguments->pos_actu_y = 0;
+        spawn_tetri(arguments, tetrimino);
         return (1);
     }
     return (0);
@@ -23,10 +24,12 @@ static int end_move(arguments_t *arguments, tetri_t *tetrimino)
 
 static void change_map(arguments_t *arguments, tetri_t *tetrimino)
 {
-    if (end_move == 1)
+    if (end_move(arguments, tetrimino) == 1)
         return;
-    arguments->pos_actu_y -= 1;
-    //arguments->map[]
+    arguments->pos_actu_y += 1;
+    printw("%d", arguments->pos_actu_x);
+    change_map_tetri(arguments, tetrimino
+        [arguments->nbr_rand_tetri].shape);
 }
 
 void display(arguments_t *arguments, tetri_t *tetrimino, int size[2])
@@ -34,10 +37,11 @@ void display(arguments_t *arguments, tetri_t *tetrimino, int size[2])
     arguments->frame += 1;
     display_stats(arguments, arguments->score / 1000 + arguments->level);
     display_title();
-    change_map(arguments, tetrimino);
-    display_map(arguments);
     if (arguments->pause == 1)
         mvprintw(size[1] / 2, size[0] / 2 - 3, "PAUSED");
+    else
+        change_map(arguments, tetrimino);
+    display_map(arguments);
     refresh();
 }
 
@@ -47,12 +51,13 @@ int loop_game(arguments_t *arguments, tetri_t *tetrimino)
     int size[2];
     static int level = -1;
 
-    if (level < 0)
+    if (level < 0) {
         level = arguments->level;
+        spawn_tetri(arguments, tetrimino);
+    }
     clear();
     getmaxyx(stdscr, size[1], size[0]);
     level = (arguments->score / 1000) + arguments->level;
-    spawn_tetri(arguments, tetrimino);
     display(arguments, tetrimino, size);
     loose = handle_actual(arguments, size, level);
     if (loose == -1)

@@ -34,6 +34,7 @@ typedef struct arguments_s
     int pos_actu_x;
     int pos_actu_y;
     int pause;
+    int nbr_rand_tetri;
 } arguments_t;
 
 typedef struct tetri_s
@@ -104,6 +105,7 @@ char get_input(arguments_t *arguments);
 int handle_actual(arguments_t *arguments, int size[2], int level);
 
 //spawn_tetri.c
+void change_map_tetri(arguments_t *arguments, char **tetrimino);
 void spawn_tetri(arguments_t *arguments, tetri_t *tetrimino);
 
 #endif /* !bs_tet */
