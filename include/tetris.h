@@ -99,4 +99,7 @@ char get_input(arguments_t *arguments);
 // start_input.c
 int handle_actual(arguments_t *arguments, int size[2], int level);
 
+//spawn_tetri.c
+void spawn_tetri(arguments_t *arguments, tetri_t *tetrimino);
+
 #endif /* !bs_tet */

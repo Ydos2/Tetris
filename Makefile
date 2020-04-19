@@ -24,7 +24,8 @@ SRC	=	src/read_file.c				\
 		src/ui_display.c			\
 		src/tools_function.c		\
 		src/start_input.c			\
-		src/check_tetriminos.c
+		src/check_tetriminos.c		\
+		src/spawn_tetri.c
 
 SRC_OBJ	=	$(SRC:.c=.o)
 

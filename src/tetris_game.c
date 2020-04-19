@@ -30,6 +30,7 @@ int loop_game(arguments_t *arguments, tetri_t *tetrimino)
     clear();
     getmaxyx(stdscr, size[1], size[0]);
     level = (arguments->score / 1000) + arguments->level;
+    spawn_tetri(arguments, tetrimino);
     display(arguments, tetrimino, size);
     refresh();
     loose = handle_actual(arguments, size, level);
