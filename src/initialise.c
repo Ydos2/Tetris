@@ -38,6 +38,10 @@ void initialise_arguments(arguments_t *arguments)
     arguments->frame = 0;
     arguments->start_time = 0;
     arguments->high_score = 0;
+    arguments->tetri_move = 0;
+    arguments->pos_actu_x = 0;
+    arguments->pos_actu_y = 0;
+    arguments->pause = 0;
 }
 
 void init_pair_void(void)

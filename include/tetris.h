@@ -30,6 +30,10 @@ typedef struct arguments_s
     int frame;
     int start_time;
     int high_score;
+    int tetri_move;
+    int pos_actu_x;
+    int pos_actu_y;
+    int pause;
 } arguments_t;
 
 typedef struct tetri_s
