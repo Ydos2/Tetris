@@ -16,9 +16,10 @@ int handle_sys(char input, arguments_t *arguments, int size[2])
     if (input == arguments->key_quit)
         return (-1);
     if (input == arguments->key_pause) {
-        clear();
-        mvprintw(size[1] / 2, size[0] / 2 - 3, "PAUSED");
-        refresh();
+        if (arguments->pause == 0)
+            arguments->pause = 1;
+        else if (arguments->pause == 1)
+            arguments->pause = 0;
     }
     return (0);
 }
@@ -27,10 +28,10 @@ int handle_input(arguments_t *arguments, int size[2])
 {
     char input = get_input(arguments);
 
-    if (input == arguments->key_left) {
-    }
-    if (input == arguments->key_right) {
-    }
+    if (input == arguments->key_left)
+        arguments->pos_actu_x -= 1;
+    if (input == arguments->key_right)
+        arguments->pos_actu_x += 1;
     if (input == arguments->key_turn) {
     }
     return (handle_sys(input, arguments, size));

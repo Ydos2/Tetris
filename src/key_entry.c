@@ -44,12 +44,12 @@ int enter_key(char key, char buff)
 
 char get_input(arguments_t *arguments)
 {
-    char buffu = getch();
+    char buff = getch();
 
-    return (enter_key(arguments->key_left, buffu) ? arguments->key_left :
-        enter_key(arguments->key_right, buffu) ? arguments->key_right :
-        enter_key(arguments->key_turn, buffu) ? arguments->key_turn :
-        enter_key(arguments->key_drop, buffu) ? arguments->key_drop :
-        enter_key(arguments->key_quit, buffu) ? arguments->key_quit :
-        enter_key(arguments->key_pause, buffu) ? arguments->key_pause : 0);
+    return (enter_key(arguments->key_left, buff) ? arguments->key_left :
+        enter_key(arguments->key_right, buff) ? arguments->key_right :
+        enter_key(arguments->key_turn, buff) ? arguments->key_turn :
+        enter_key(arguments->key_drop, buff) ? arguments->key_drop :
+        enter_key(arguments->key_quit, buff) ? arguments->key_quit :
+        enter_key(arguments->key_pause, buff) ? arguments->key_pause : 0);
 }
