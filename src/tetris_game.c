@@ -13,7 +13,7 @@
 
 static int end_move(arguments_t *arguments, tetri_t *tetrimino)
 {
-    if (arguments->pos_actu_y == arguments->map_size_y - 5) {
+    if (arguments->pos_actu_y == arguments->map_size_y - 4) {
         arguments->pos_actu_x = 0;
         arguments->pos_actu_y = 0;
         spawn_tetri(arguments, tetrimino);
@@ -27,7 +27,6 @@ static void change_map(arguments_t *arguments, tetri_t *tetrimino)
     if (end_move(arguments, tetrimino) == 1)
         return;
     arguments->pos_actu_y += 1;
-    printw("%d", arguments->pos_actu_x);
     change_map_tetri(arguments, tetrimino
         [arguments->nbr_rand_tetri].shape);
 }

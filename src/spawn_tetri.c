@@ -28,7 +28,8 @@ void spawn_tetri(arguments_t *arguments, tetri_t *tetrimino)
 
     srand(clock());
     random = rand() % (arguments->nbr_tets);
-    if (tetrimino[random].error == 0)
+    if (tetrimino[random].error == 0) {
         change_map_tetri(arguments, tetrimino[random].shape);
-    arguments->nbr_rand_tetri = random;
+        arguments->nbr_rand_tetri = random;
+    }
 }
